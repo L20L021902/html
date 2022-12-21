@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="../style/employee.css">
+</head>
+
+<body>
+   <div class="wrapper">
+      <div class="container">
+         <div class="table">
+            <div class="table-wrap">
+               <div class="table-rows1 rows"><a href="../infocient/indexclient.html" target="_blank">个人信息</a></div>
+               <div class="table-rows2 rows"><a href="../employee/employee.html">货品官理</a></div>
+               <div class="table-rows3 rows"><a href="../stocks/stocks.html">库存管理</a></div>
+               <div class="table-rows4 rows">4-4</div>
+               <div class="table-rows5 rows">5-5</div>
+               <div class="table-rows6 rows">6-6</div>
+            </div>
+         </div>
+      </div>
+      <div class="contain">
+         <div class="header">
+            <div class="header-wrap">
+               <div class="header-menu">
+                  货品官理
+               </div>
+               <div class="header-icon">
+                  <img class="icon-image" src="https://cdn-icons-png.flaticon.com/512/56/56745.png" alt="">
+                  <div class="icon-text">admin</div>
+               </div>
+            </div>
+         </div>
+         <div class="head">
+            <div class="head-wrap">
+               <div class="head-look">
+                  <span class="look-text">货品编号：</span>
+                  <input type="text" class="look-input" placeholder="输入编号">
+               </div>
+               <div class="head-btn">查询</div>
+            </div>
+         </div>
+         <div class="search">
+            <div class="search-wrap">
+               <div class="search-one">
+                  <span class="one-string string">货品名称：</span>
+                  <input type="text" class="one-input inpt">
+               </div>
+               <div class="searach-two">
+                  <span class="two-string string">商品分类：</span>
+                  <input type="text" class="two-input inpt">
+               </div>
+               <div class="search-three">
+                  <span class="three-string string">商品成本：</span>
+                  <input type="text" class="three-input inpt">
+               </div>
+               <div class="search-four">
+                  <span class="four-string string">商品性价：</span>
+                  <input type="text" class="four-input inpt">
+               </div>
+               <div class="search-five">
+                  <span class="five-string sting">库存数量：</span>
+                  <input type="text" class="five-input inpt">
+               </div>
+               <div class="search-btn">添加</div>
+            </div>
+         </div>
+         <div class="list">
+            <div class="list-wrap">
+               <table class="list-table">
+                  <thead>
+                     <tr class="table-cells">
+                        <th>序号</th>
+                        <th>货品编号</th>
+                        <th>商品名称</th>
+                        <th>商品分类</th>
+                        <th>商品成本</th>
+                        <th>商品性价</th>
+                        <th>状态</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr class="table-rows">
+                        <td>1</td>
+                        <td>567001231</td>
+                        <td>Apple</td>
+                        <td>电子产品</td>
+                        <td>5999</td>
+                        <td>6399</td>
+                        <td class="cells-status1">却贷</td>
+                        <td>2022-10-23 16:15:00</td>
+                        <td class="cells-btn">
+                           <a href="" class="cells-btn1">编辑</a>
+                           <a href="" class="cells-btn2">册除</a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>2</td>
+                        <td>456782345</td>
+                        <td>圆规</td>
+                        <td>文化用品</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td class="cells-status2">有货</td>
+                        <td>2022-10-24 17:15:00</td>
+                        <td class="cells-btn">
+                           <a href="" class="cells-btn1">编辑</a>
+                           <a href="" class="cells-btn2">册除</a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>3</td>
+                        <td>667512945</td>
+                        <td>布熊</td>
+                        <td>玩具</td>
+                        <td>50</td>
+                        <td>100</td>
+                        <td class="cells-status2">有贷</td>
+                        <td>2022-10-24 17:18:00</td>
+                        <td class="cells-btn">
+                           <a href="" class="cells-btn1">编辑</a>
+                           <a href="" class="cells-btn2">册除</a>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="box">
+         <div class="modal">
+
+            <div class="modal-one">
+               <span class="modal-string string">货品名称：</span>
+               <input type="text" class="one-input inpt">
+            </div>
+            <div class="modal-one">
+               <span class="modal-string string">商品分类：</span>
+               <input type="text" class="one-input inpt">
+            </div>
+            <div class="modal-one">
+               <span class="modal-string string">商品成本：</span>
+               <input type="text" class="one-input inpt">
+            </div>
+            <div class="modal-one">
+               <span class="modal-string string">商品性价：</span>
+               <input type="text" class="one-input inpt">
+            </div>
+            <div class="modal-one">
+               <span class="modal-string string">库存数量：</span>
+               <input type="text" class="one-input inpt">
+            </div>
+
+            <div class="modal-btn">保存</div>
+         </div>
+      </div>
+      <script src="../source/script.js"></script>
+</body>
+
+</html>
