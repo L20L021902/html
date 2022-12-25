@@ -6,20 +6,22 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link rel="stylesheet" href="../style/styleClient.css">
 </head>
 
 <body>
+
    <div class="wrapper">
       <div class="container">
          <div class="table">
             <div class="table-wrap">
                <div class="table-rows1 rows">个人信息</div>
                <div class="table-rows2 rows"><a href="../employee/employee.html" target="_blank">货品官理</a></div>
-               <div class="table-rows3 rows">库存管理</div>
-               <div class="table-rows4 rows">4-4</div>
-               <div class="table-rows5 rows">5-5</div>
-               <div class="table-rows6 rows">6-6</div>
+               <div class="table-rows3 rows"><a href="../stocks/stocks.html" target="_blank">库存管理</a></div>
+               <div class="table-rows4 rows"><a href="../governmentGoods/governmentGoods.html">销售管理</a></div>
+               <div class="table-rows5 rows"><a href="../governmentClient/governmentClient.html">客户管理</a></div>
             </div>
          </div>
       </div>
@@ -72,13 +74,13 @@
                <div class="body-top2">
                   <div class="top2-wrap">
                      <span>电话号码</span>
-                     <input type="text">
+                     <input type="number">
                   </div>
                </div>
                <div class="menu-bottom">
                   <div class="bottom-wrap">
-                     <div class="bottom-btn">保存</div>
-                     <a class="bottom-link" href="#">删除</a>
+                     <div class="button-send">保存</div>
+                     <div class="button-clear">删除</div>
                   </div>
                </div>
             </div>
@@ -86,6 +88,10 @@
       </div>
    </div>
 
+
+   <script src='/source/scriptClient.js'>
+
+   </script>
 </body>
 
 </html>

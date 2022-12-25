@@ -60,6 +60,9 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 .table-rows3{
    border: 1px solid #002142;
 }
+.table-rows3 a{
+   color:#fff;
+}
 .table-rows4{
    border: 1px solid #002142;
 }
@@ -224,7 +227,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 .bottom-wrap {
    display: flex;
 }
-.bottom-btn {
+.button-send {
    margin:0px 50px 0px 0px;
    border:1px solid #4c78f0;
    border-radius: 2px;
@@ -238,13 +241,13 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
    font-size: 16px;
    cursor: pointer;
 }
-.bottom-btn:hover{
+.button-send:hover{
    box-shadow: 0 2px 2px #0080c0;
    cursor: pointer;
    top:-7px;
    transition:all 0.1s ease 0s;
 }
-.bottom-link {
+.button-clear {
    font-size: 17px;
    color:#4c78f0;
    font-family: 'Open Sans', sans-serif;
