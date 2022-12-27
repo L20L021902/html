@@ -1,11 +1,11 @@
-function findByClass (className) {
+function findByClass(className) {
   return document.querySelector(className)
 }
 
 let buttonForm = findByClass('.button-send');
 let buttonClear = findByClass('.button-clear');
 
-async function postRequest (url, info) {
+async function postRequest(url, info) {
   return await fetch(`${url}`, {
     method: 'POST',
     headers: {
@@ -15,7 +15,7 @@ async function postRequest (url, info) {
   });
 }
 
-buttonForm.addEventListener('click' , () => {
+buttonForm.addEventListener('click', () => {
   let name = findByClass('.head-header1').childNodes[3].value;
   let address = findByClass('.top1-wrap').childNodes[3].value;
   let phoneNumber = findByClass('.top2-wrap').childNodes[3].value;
@@ -27,7 +27,7 @@ buttonForm.addEventListener('click' , () => {
     number: phoneNumber,
     sex: sex,
   };
-
+  // ССЫЛКА
   postRequest('https://jsonplaceholder.typicode.com/users', userInfo);
   if (name == '') return;
   else {
@@ -40,7 +40,7 @@ buttonForm.addEventListener('click' , () => {
 
 });
 
-function clearFields () {
+function clearFields() {
   findByClass('.head-header1').children[1].value = '';
   findByClass('.top1-wrap').children[1].value = '';
   findByClass('.top2-wrap').children[1].value = '';

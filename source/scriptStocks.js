@@ -1,29 +1,39 @@
 //STOCKS
 const box = document.querySelector('.box');
-const btn = document.querySelector('.cells-btn1');
-const buttonRemove = document.querySelector('.btn-remove');
+const btn = document.querySelectorAll('.cells-btn1');
+const buttonRemove = document.querySelectorAll('.btn-remove');
 
 
-btn.addEventListener('click', (event) => {
-   box.style.display = "flex";
-   event.preventDefault();
-});
+for (let button of btn) {
+   button.addEventListener('click', (event) => {
+      box.style.display = 'flex';
+      event.preventDefault();
+   });
+}
 
-buttonRemove.addEventListener('click', (event) => {
-   box.style.display = 'none';
-   event.preventDefault();
-});
+for (let btnRemove of buttonRemove) {
+   btnRemove.addEventListener('click', (event) => {
+      box.style.display = 'none';
+      event.preventDefault();
+   });
+}
+
 
 const caseInfo = document.querySelector('.case');
-const btnCase = document.querySelector('.cells-btn2');
-const btnRemove = document.querySelector('.btn-remove');
+const btnCase = document.querySelectorAll('.cells-btn2');
+const btnRemove = document.querySelectorAll('.btn-remove');
 
-btnCase.addEventListener('click', (event) => {
-   caseInfo.style.display = 'flex';
-   event.preventDefault();
-});
+for (let btnInfo of btnCase) {
+   btnInfo.addEventListener('click', (event) => {
+      box.style.display = 'flex';
+      event.preventDefault();
+   });
+}
 
-btnRemove.addEventListener('click', (event) => {
-   caseInfo.style.display = 'none';
-   event.preventDefault();
-});
+for (let btnR of btnRemove) {
+   btnR.addEventListener('click', (event) => {
+      box.style.display = 'none';
+      event.preventDefault();
+   });
+}
+

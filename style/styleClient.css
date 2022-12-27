@@ -66,11 +66,14 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 .table-rows4{
    border: 1px solid #002142;
 }
+.table-rows4 a{
+   color:#fff;
+}
 .table-rows5{
    border: 1px solid #002142;
 }
-.table-rows6{
-   border: 1px solid #002142;
+.table-rows5 a{
+   color:#fff;
 }
 /*-----  contain-------*/
 .contain{

@@ -28,7 +28,7 @@ requestButton.addEventListener('click', () => {
    findProduct();
 })
 
-function findProduct () {
+function findProduct() {
    let allProductNumbers = document.querySelectorAll('.body-rows');
    let productNumber = document.querySelector('.look-input').value;
 
@@ -37,11 +37,11 @@ function findProduct () {
    for (item of allProductNumbers) {
       if (item.children[1].innerHTML === productNumber) {
          item.classList.add('blueBackground');
-      } 
+      }
    }
 }
 
-function clearHighlight () {
+function clearHighlight() {
    let allProductNumbers = document.querySelectorAll('.body-rows');
 
    allProductNumbers.forEach(item => {
@@ -54,16 +54,21 @@ function clearHighlight () {
 // // addBtn
 
 
-// let addBtn = document.querySelector('.addBtn');
+let addBtn = document.querySelector('.addBtn');
 
-// addBtn.addEventListener('click', () => {
-//    let serialNumber = +(document.querySelector('.tBody').lastElementChild.children[0].innerHTML) + 1;
-//    let productNumber = document.querySelector('.one-input.inpt').value;
+addBtn.addEventListener('click', () => {
+   let serialNumber = +(document.querySelector('.tBody').lastElementChild.children[0].innerHTML) + 1;
+   l
+   let productNumber = document.querySelector('.zero-input').value;
+   let productName = document.querySelector('.one-input').value;
+   let productCategory = document.querySelector('.twi-input').value;
+   let productFirstPrice = document.querySelector('.three-input').value;
+   let productSecondPrice = document.querySelector('.four-input').value;
 
 
-//    addRow();
-// })
+   addRow();
+})
 
-// function addRow () {
+function addRow() {
 
-// }
+}

@@ -78,6 +78,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 .table-rows5 a{
    color:#fff;
 }
+
 /*-----  contain-------*/
 .contain{
    display: flex;
@@ -140,16 +141,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
    color:#4c78f0;
    font-weight: bold;
 }
-.hat-text2 {
-   cursor: pointer;
-   font-size: 18px;
-   font-family: 'Open Sans', sans-serif;
-}
-.hat-text2:hover{
-   font-size: 20px;
-   color:#4c78f0;
-   font-weight: bold;
-}
+
 /*--------HEAD--------*/
 .head {
 }
@@ -252,7 +244,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
    font-family: 'Open Sans', sans-serif;
    font-size: 15px;
    cursor: pointer;
-   margin:0px 10px 6px 0px;
+   margin:0px 10px 6px 10px;
 }
 .search-null {
    padding: 7px 0px 0px 0px;
@@ -265,7 +257,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 .position {
    background-color: #4c78f0;
    box-shadow: 1px 0px 0px #004891;
-   width: 1159px;
+   width: 1500px;
    font-size: 16px;
    color:#fff;
    height: 25px;
@@ -307,15 +299,17 @@ tbody td{
 .cells-status1 {
    color:#f24848;
 }
-.cells-btn:nth-child(0){
-   color:#fff;
+.cells-btn{
+  margin:0px 0px 0px 10px;
+  
 }
+
 .cells-btn1 {
    font-size: 15px;
    color:#4c78f0;
    font-family: 'Open Sans', sans-serif;
+   padding: 0px 60px 0px 0px;
 }
-
 
 .cells-btn2 {
    font-size: 15px;
@@ -327,4 +321,151 @@ tbody td{
 .cells-status2 {
    color:#1e8a31;
    font-weight: bold;
+}
+
+/*-----------BOX-------------*/
+.box{
+   position: fixed;
+   display: flex;
+   top:250px;
+   left:700px;
+   justify-content: center;
+   align-items: center;
+   display: none;  
+   
+}
+/*-----------MODEL-------------*/
+
+.modal{
+   width: 500px;
+   height: 500px;
+   background-color:#414141;
+   opacity: 0.9;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   padding:70px 0px 0px 100px;
+}
+.modal-text{
+   color:#fff;
+   font-size: 25px;
+   font-family: 'Open Sans', sans-serif;
+   padding: 0px 0px 40px 0px;
+}
+.modal-one {
+   margin:0px 0px 40px 0px;
+}
+.modal-string {
+   color:#fff;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 17px;
+}
+
+.modal-btn {
+   margin:0px 0px 10px 85px;
+   display: flex;
+   
+}
+.btn-save{
+   border: 1px solid #4c78f0;
+   border-radius: 2px;
+   background-color: #4c78f0;
+   width: 65px;
+   text-align: center;
+   height: 27px;
+   padding: 5px 0px 0px 0px;
+   color: #fff;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 15px;
+   cursor: pointer;
+   margin:0px 0px 0px 10px;
+}
+.btn-remove{
+   color:#fff;
+   border:1px solid #fff;
+   border-radius: 2px;
+   width: 65px;
+   text-align: center;
+   height: 27px;
+   padding: 5px 0px 0px 0px;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 15px;
+   cursor: pointer;
+}
+
+.one-text{
+   color:#fff;
+   font-size: 15px;
+}
+
+/*----------CASE-----------*/
+
+.case {
+   position: fixed;
+   display: flex;
+   top:250px;
+   left:700px;
+   justify-content: center;
+   align-items: center;
+   display: none;
+}
+.info {
+   width: 500px;
+   height: 500px;
+   background-color:#414141;
+   opacity: 0.9;
+   /* display: flex;
+   justify-content: center;
+   flex-direction: column; */
+   padding:70px 0px 0px 100px;
+}
+.info-text {
+   padding: -10px 0px 0px 0px;
+   color:#fff;
+   font-size: 20px;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 500;
+   margin:0px 0px 50px 0px;
+}
+.info-one {
+   margin:0px 0px 17px 0px;
+}
+.info-one span{
+   color:#fff;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 19px;
+}
+.info-two {
+   margin:0px 0px 17px 0px;
+}
+.info-two span{
+   color:#fff;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 19px;
+}
+.info-three {
+   margin:0px 0px 17px 0px;
+}
+
+.info-three span{
+   color:#fff;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 19px;
+}
+.info-four {
+   margin:0px 0px 170px 0px;
+}
+.info-four span{
+   color:#fff;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 19px;
+}
+.info-btn {
+   display: flex;
+
+}
+.btn-remove {
+}
+.btn-save {
+   margin:0px 10px 0px 60px;
 }
