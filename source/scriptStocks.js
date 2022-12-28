@@ -37,3 +37,33 @@ for (let btnR of btnRemove) {
    });
 }
 
+//Highlight
+
+let requestButton = document.querySelector('.head-btn');
+
+requestButton.addEventListener('click', () => {
+   findProduct();
+})
+
+function findProduct() {
+   let allProductNumbers = document.querySelectorAll('.body-rows');
+   let productNumber = document.querySelector('.look-input').value;
+
+   clearHighlight();
+
+   for (item of allProductNumbers) {
+      if (item.children[1].innerHTML === productNumber) {
+         item.classList.add('blueBackground');
+      }
+   }
+}
+
+function clearHighlight() {
+   let allProductNumbers = document.querySelectorAll('.body-rows');
+
+   allProductNumbers.forEach(item => {
+      if (item.className == 'body-rows blueBackground') {
+         item.classList.remove('blueBackground');
+      }
+   })
+}

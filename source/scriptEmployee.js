@@ -15,7 +15,7 @@ const btnsDelete = document.querySelectorAll('.cells-btn2');
 
 btnsDelete.forEach(btn => {
    btn.addEventListener('click', (event) => {
-      // event.preventDefault();
+      event.preventDefault();
       event.target.closest('tr').remove();
    });
 });
@@ -53,22 +53,68 @@ function clearHighlight() {
 
 // // addBtn
 
-
+let rowsTbody = document.querySelector('tbody');
 let addBtn = document.querySelector('.addBtn');
 
+let cellsTbody = document.querySelectorAll('tbody tr');
+console.log(rowsTbody.innerHTML);
+
 addBtn.addEventListener('click', () => {
-   let serialNumber = +(document.querySelector('.tBody').lastElementChild.children[0].innerHTML) + 1;
-   l
+   let serialNumber = +(rowsTbody.lastElementChild.children[0].innerHTML) + 1;
    let productNumber = document.querySelector('.zero-input').value;
    let productName = document.querySelector('.one-input').value;
-   let productCategory = document.querySelector('.twi-input').value;
+   let productCategory = document.querySelector('.two-input').value;
    let productFirstPrice = document.querySelector('.three-input').value;
    let productSecondPrice = document.querySelector('.four-input').value;
 
 
    addRow();
-})
+
+});
+
 
 function addRow() {
+
+   let tr = rowsTbody.createElement(tr);
+
+   for (let i = 0; i < cellsTbody.cells.length; i++) {
+      tr.createElement('td')[i];
+   }
+
+   rowsTbody.append(tr);
+
+
+
+
+
+
+   // let tr = document.createElement('tr');
+   // let td = document.createElement('td');
+   // rowsTbody.appendChild(tr);
+
+   // for (let i = 0; i < cellsTbody.cells.length; i++) {
+
+   //    tr.appendChild(td)[i];
+
+
+   // }
+
+
+   // for (let i = 0; i < rowsTbody.rows.length; i++) {
+   //    let tr = rowsTbody.createElement('tr');
+   //    let td = tr.createElement('td')[i];
+   //    td[i].innerHTML = productNumber;
+
+
+
+
+   // for (let i = 0; i < rowsTbody.rows.length; i++) {}
+   // let tr = rowsTbody.createElement('tr');
+
+   // for (let i = 0; i < cellsTbody.cells; i++) { }
+   // let td = tr.createElement('td');
+   // td.innerHTML = serialNumber;
+
+   // tr.appendChild(td);
 
 }

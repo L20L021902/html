@@ -469,3 +469,7 @@ tbody td{
 .btn-save {
    margin:0px 10px 0px 60px;
 }
+
+.blueBackground {
+   background-color: rgba(0, 131, 197, 0.5);
+}

@@ -280,6 +280,9 @@ tbody td{
    font-family: 'Open Sans', sans-serif;
    font-size: 15px;
    cursor: pointer;
-   
+}
+
+.blueBackground {
+   background-color: rgba(0, 131, 197, 0.5);
 }
 
