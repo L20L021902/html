@@ -9,13 +9,13 @@ for (let button of btn) {
    });
 }
 
-//TABLE
+//DELETE TABLE
 const table = document.querySelector('tbody tr');
 const btnsDelete = document.querySelectorAll('.cells-btn2');
 
 btnsDelete.forEach(btn => {
    btn.addEventListener('click', (event) => {
-      event.preventDefault();
+      // event.preventDefault();
       event.target.closest('tr').remove();
    });
 });
