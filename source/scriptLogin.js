@@ -7,7 +7,7 @@ async function postRequest(url, info) {
       body: JSON.stringify(info),
    });
 }
-
+//ССЫЛКА
 postRequest('https://jsonplaceholder.typicode.com/users', userInfo);
 
 const btnPress = document.querySelector('.btn-button');

@@ -115,7 +115,6 @@ body{
    color:#4c78f0;
 }
 
-
 /*--------REGISTRATION---------*/
 
 .registrarion {
@@ -144,10 +143,12 @@ body{
 /*-----AGREEMENT------*/
 
 .agreement {
-  
+  display: flex;
+  justify-content: center;
+  margin:10px 0px 0px 0px;
 }
 .agreement-input {
-   
+ 
 }
 .input-text1 {
    color:#4c78f0;
@@ -165,6 +166,5 @@ body{
    color:#4c78f0;
    font-family: 'Open Sans', sans-serif;
 }
-
 
 
