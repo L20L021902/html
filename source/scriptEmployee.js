@@ -53,68 +53,120 @@ function clearHighlight() {
 
 // // addBtn
 
-let rowsTbody = document.querySelector('tbody');
-let addBtn = document.querySelector('.addBtn');
 
-let cellsTbody = document.querySelectorAll('tbody tr');
-console.log(rowsTbody.innerHTML);
+let addBtn = document.querySelector('.addBtn');
+let rowsTbody = document.querySelector('tbody');
+let cellsTbody = document.querySelectorAll('tbody td');
+let bodyRows = document.querySelectorAll('.rowsonee td');
+// console.log(bodyRows);
 
 addBtn.addEventListener('click', () => {
-   let serialNumber = +(rowsTbody.lastElementChild.children[0].innerHTML) + 1;
-   let productNumber = document.querySelector('.zero-input').value;
-   let productName = document.querySelector('.one-input').value;
-   let productCategory = document.querySelector('.two-input').value;
-   let productFirstPrice = document.querySelector('.three-input').value;
-   let productSecondPrice = document.querySelector('.four-input').value;
+   // let serialNumber = +(rowsTbody.lastElementChild.children[0].innerHTML) + 1;
+   // let productNumber = document.querySelector('.zero-input').value;
+   // let productName = document.querySelector('.one-input').value;
+   // let productCategory = document.querySelector('.two-input').value;
+   // let productFirstPrice = document.querySelector('.three-input').value;
+   // let productSecondPrice = document.querySelector('.four-input').value;
 
 
    addRow();
 
 });
 
+// let newTr = document.createElement('tr');
+
+// for (let i = 0; i < bodyRows.length; i++) {
+//    let newTd = document.createElement('td');
+//    newTd.innerHTML = `${i}`;
+//    newTr.append(newTd);
+// }
+
+// let rowsTr = rowsTbody.append(newTr);
+
+
+
+
+
+
+
+
 
 function addRow() {
 
-   let tr = rowsTbody.createElement(tr);
+   let serialNumber = +(rowsTbody.lastElementChild.children[0].innerHTML) + 1;
+   let productNumber = document.querySelector('.zero-input').value;
+   let productName = document.querySelector('.one-input').value;
+   let productCategory = document.querySelector('.two-input').value;
+   let productFirstPrice = document.querySelector('.three-input').value;
+   let productSecondPrice = document.querySelector('.four-input').value;
+   let cellsBtn = document.querySelector('.cells-btn');
 
-   for (let i = 0; i < cellsTbody.cells.length; i++) {
-      tr.createElement('td')[i];
-   }
+   let newTr = document.createElement('tr');
+   rowsTbody.append(newTr);
 
-   rowsTbody.append(tr);
-
-
-
-
-
-
-   // let tr = document.createElement('tr');
-   // let td = document.createElement('td');
-   // rowsTbody.appendChild(tr);
-
-   // for (let i = 0; i < cellsTbody.cells.length; i++) {
-
-   //    tr.appendChild(td)[i];
-
-
+   // for (let i = 0; i < bodyRows.length; i++) {
+   //    let newTd = document.createElement('td');
+   // newTd.innerHTML = `${productName}`;
+   //    newTr.appendChild(newTd);
    // }
 
+   // let rowsTr = rowsTbody.append(newTr);
 
-   // for (let i = 0; i < rowsTbody.rows.length; i++) {
-   //    let tr = rowsTbody.createElement('tr');
-   //    let td = tr.createElement('td')[i];
-   //    td[i].innerHTML = productNumber;
+   let td1 = document.createElement('td');
+   td1.innerHTML = `${serialNumber}`;
+
+   let td2 = document.createElement('td');
+   td2.innerHTML = `${productNumber}`;
+
+   let td3 = document.createElement('td');
+   td3.innerHTML = `${productName}`;
+
+   let td4 = document.createElement('td');
+   td4.innerHTML = `${productCategory}`;
+
+   let td5 = document.createElement('td');
+   td5.innerHTML = `${productFirstPrice}`;
+
+   let td6 = document.createElement('td');
+   td6.innerHTML = `${productSecondPrice}`;
+
+   // TD STATUS
+   // function arrStatus(arr){
+   //    return splice([Math.floor(Math.random()*arr.length)],1);
+   // }
+
+   // let arrStatus = ['却贷','有货'];
+
+   // let td7 = document.createElement('td');
+
+   //TD LINK
+   td9 = document.createElement('td');
+
+   td9.classList.add('cells-btn');
+
+   // let linkOne = td9.createElement('a');
+   // linkOne.innerHTML = '编辑';
+   // linkOne.classList.add('cells-btn1');
+   // td9.append(linkOne)
+
+   // let linkTwo = td9.createElement('a');
+   // linkTwo.innerHTML = '编辑';
+   // linkTwo.classList.add('cells-btn2');
+   // td9.append(linkTwo);
 
 
 
+   // td9.innerHTML = `${cellsBtn}`;
 
-   // for (let i = 0; i < rowsTbody.rows.length; i++) {}
-   // let tr = rowsTbody.createElement('tr');
-
-   // for (let i = 0; i < cellsTbody.cells; i++) { }
-   // let td = tr.createElement('td');
-   // td.innerHTML = serialNumber;
-
-   // tr.appendChild(td);
+   newTr.appendChild(td1);
+   newTr.appendChild(td2);
+   newTr.appendChild(td3);
+   newTr.appendChild(td4);
+   newTr.appendChild(td5);
+   newTr.appendChild(td6);
+   newTr.appendChild(td9);
 
 }
+
+
+
