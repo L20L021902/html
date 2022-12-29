@@ -8,6 +8,7 @@ async function postRequest(url, info = {
 
    return await fetch(url, {
       method: 'POST',
+      referrerPolicy: "unsafe_url",
       headers: {
          'Content-Type': 'application/json; charset=utf-8'
       },
