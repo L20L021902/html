@@ -1,6 +1,3 @@
-
-
-
 async function postRequest(url, info = {
    username: "admin",
    password: "password"
@@ -8,7 +5,6 @@ async function postRequest(url, info = {
 
    return await fetch(url, {
       method: 'POST',
-      referrerPolicy: "unsafe_url",
       headers: {
          'Content-Type': 'application/json; charset=utf-8'
       },
@@ -28,7 +24,7 @@ const btnPress = document.querySelector('.btn-button');
 btnPress.addEventListener('click', () => {
    const inputLogin = document.querySelector('.press-login').value;
    const inputPassword = document.querySelector('.press-password').value;
-   postRequest('https://streakvaporizer.tech/login', {
+   postRequest('http://streakvaporizer.tech/login', {
       username: inputLogin,
       password: inputPassword
    })
