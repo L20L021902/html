@@ -111,8 +111,8 @@ async function getGoods() {
    fetch('/employee/get', {
       method: 'GET'
    }).then(res => {
-      console.log(data);
-      console.log(data.json());
+      console.log(res);
+      console.log(res.json());
       makeTable(res.json());
    }).catch(e => {
       console.log(e);
