@@ -66,6 +66,9 @@ addBtn.addEventListener('click', () => {
 });
 
 function makeTable(data) {
+
+   const rows = document.querySelector('tbody');
+
 	var wrapColumn = function(value) {
 		return "<td>" + value + "</td>";
 	};
@@ -86,7 +89,7 @@ function makeTable(data) {
    }
 
 	for ( var i = 0; i < data.length; i += 1) {
-		$("#goods_table tbody").append("<tr class=\"body-rows\">" +
+		rows.append("<tr class=\"body-rows\">" +
          wrapColumn(data[i].id) +
          wrapColumn(data[i].goods_id) +
          wrapColumn(data[i].name) +
