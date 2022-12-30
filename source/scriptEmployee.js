@@ -67,7 +67,8 @@ addBtn.addEventListener('click', () => {
 
 function makeTable(data) {
 
-   const rows = document.querySelector('tbody');
+   const rows = document.querySelector('#goods_table_rows');
+   rows.append("test")
 
 	var wrapColumn = function(value) {
 		return "<td>" + value + "</td>";
