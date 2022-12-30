@@ -88,8 +88,9 @@ function makeTable(data) {
       "</td>";
    }
 
+   var rows_html = ""
 	for ( var i = 0; i < data.length; i += 1) {
-		rows.append("<tr class=\"body-rows\">" +
+		rows_html += "<tr class=\"body-rows\">" +
          wrapColumn(data[i].id) +
          wrapColumn(data[i].goods_id) +
          wrapColumn(data[i].name) +
@@ -99,8 +100,10 @@ function makeTable(data) {
          makeStatusRow(data[i].status) +
          wrapColumn(data[i].update_date) +
          makeButtonsRow(data[i].goods_id) +
-         "</tr>")
+         "</tr>";
 	}
+
+   rows.innerHTML = rows_html;
 }
 
 async function getGoods() {
