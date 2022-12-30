@@ -22,7 +22,7 @@ buttonForm.addEventListener('click', (e) => {
 	e.preventDefault();
   let realname = findByClass('.head-header1').childNodes[3].value;
   let address = findByClass('.top1-wrap').childNodes[3].value;
-  let phoneNumber = findByClass('.top2-wrap').childNodes[3].value;
+  let phoneNumber = Number(findByClass('.top2-wrap').childNodes[3].value);
   let sex = findByClass('.header2-sex').value;
 
   postRequest('/infocient/update', {
