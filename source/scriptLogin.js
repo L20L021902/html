@@ -11,7 +11,7 @@ async function postRequest(url, info = {
       mode: 'no-cors',
       body: JSON.stringify(info),
    }).then(() => {
-      window.location.href = "https://streakvaporizer.tech/infocient/indexclient.html";
+      window.location.href = "/infocient/indexclient.html";
    })
       .catch(() => {
          alert('Неверное имя пользователя или пароль');
@@ -24,7 +24,7 @@ const btnPress = document.querySelector('.btn-button');
 btnPress.addEventListener('click', () => {
    const inputLogin = document.querySelector('.press-login').value;
    const inputPassword = document.querySelector('.press-password').value;
-   postRequest('http://streakvaporizer.tech/login', {
+   postRequest('/login', {
       username: inputLogin,
       password: inputPassword
    })
