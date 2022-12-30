@@ -114,7 +114,8 @@ async function getGoods() {
       console.log(data);
       console.log(data.json());
       makeTable(res.json());
-   }).catch(() => {
+   }).catch(e => {
+      console.log(e);
       alert("Could not get goods");
    })
 }
