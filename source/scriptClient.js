@@ -29,6 +29,6 @@ buttonForm.addEventListener('click', (e) => {
     realname: realname,
     address: address,
     phone: phoneNumber,
-    sex: sex,
+    sex: sex
   })
 })
