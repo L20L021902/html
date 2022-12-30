@@ -68,7 +68,6 @@ addBtn.addEventListener('click', () => {
 function makeTable(data) {
 
    const rows = document.querySelector('#goods_table_rows');
-   rows.append("test")
 
 	var wrapColumn = function(value) {
 		return "<td>" + value + "</td>";
@@ -90,7 +89,6 @@ function makeTable(data) {
    }
 
 	for ( var i = 0; i < data.length; i += 1) {
-      console.log(i);
 		rows.append("<tr class=\"body-rows\">" +
          wrapColumn(data[i].id) +
          wrapColumn(data[i].goods_id) +
@@ -103,18 +101,15 @@ function makeTable(data) {
          makeButtonsRow(data[i].goods_id) +
          "</tr>")
 	}
-
-   console.log("end");
 }
 
 async function getGoods() {
    await fetch('/employee/get', {
       method: 'GET'
-   }).then(res => {
-      console.log(res);
-      console.log(res.json());
-      makeTable(res.json());
-   }).catch(e => {
+   })
+   .then(res => res.json())
+   .then(data => makeTable(data))
+   .catch(e => {
       console.log(e);
       alert("Could not get goods");
    })
