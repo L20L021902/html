@@ -65,126 +65,49 @@ addBtn.addEventListener('click', () => {
 
 });
 
+function makeTable(data) {
+	var wrapColumn = function(value) {
+		return "<td>" + value + "</td>";
+	};
 
-function addRow() {
-
-   let serialNumber = +(rowsTbody.lastElementChild.children[0].innerHTML) + 1;
-   let productNumber = document.querySelector('.zero-input').value;
-   let productName = document.querySelector('.one-input').value;
-   let productCategory = document.querySelector('.two-input').value;
-   let productFirstPrice = document.querySelector('.three-input').value;
-   let productSecondPrice = document.querySelector('.four-input').value;
-
-
-
-   if (productNumber === '' || productName === '' || productName === '' || productCategory === '' || productFirstPrice === '' || productSecondPrice === '') {
-      return;
-   } else {
-
-      //INPUT
-      let newTr = document.createElement('tr');
-      rowsTbody.append(newTr);
-
-      let td1 = document.createElement('td');
-      td1.innerHTML = `${serialNumber}`;
-
-      let td2 = document.createElement('td');
-      td2.innerHTML = `${productNumber}`;
-
-      let td3 = document.createElement('td');
-      td3.innerHTML = `${productName}`;
-
-      let td4 = document.createElement('td');
-      td4.innerHTML = `${productCategory}`;
-
-      let td5 = document.createElement('td');
-      td5.innerHTML = `${productFirstPrice}`;
-
-      let td6 = document.createElement('td');
-      td6.innerHTML = `${productSecondPrice}`;
-
-      // TD STATUS
-      let td7 = document.createElement('td');
-
-      let words = ['却贷', '有货'];
-      let wordArr = words[Math.floor(Math.random() * words.length)];
-
-      if (wordArr === '却贷') {
-         td7.classList.add('cells-status1');
+   var makeStatusRow = function(status) {
+      if (status == "却贷") {
+         return "<td class=\"cells-status1\">却贷</td>";
       } else {
-         td7.classList.add('cells-status2');
+         return "<td class=\"cells-status2\">有货</td>";
       }
-
-      td7.innerHTML = `${wordArr}`;
-
-      //TD TIME
-
-      let td8 = document.createElement('td');
-
-      function randomDate(start, end) {
-         return new Date(start.getTime()
-            + Math.random() * (end.getTime() - start.getTime()));
-      }
-
-      var myDate = randomDate(new Date(2012, 0, 1), new Date());
-
-      let timeData = myDate.getFullYear() + '-'
-         + ('0' + (myDate.getMonth() + 1)).slice(-2)
-         + '-' + ('0' + myDate.getDate()).slice(-2)
-         + ' '
-         + ('0' + myDate.getHours()).slice(-2)
-         + ':' + ('0' + myDate.getMinutes()).slice(-2)
-         + ':' + ('0' + myDate.getSeconds()).slice(-2)
-         ;
-
-      td8.innerHTML = `${timeData}`;
-
-      //TD LINK
-      td9 = document.createElement('td');
-      td9.classList.add('cells-btn');
-
-      let linkOne = document.createElement('a');
-      let linkAppendOne = td9.appendChild(linkOne);
-      linkAppendOne.classList.add('cells-btn1');
-      linkAppendOne.innerHTML = '编辑';
-
-      let linkTwo = document.createElement('a');
-      let linkAppendTwo = td9.appendChild(linkTwo);
-      linkAppendTwo.classList.add('cells-btn2');
-      linkAppendTwo.innerHTML = '册除';
-
-      newTr.appendChild(td1);
-      newTr.appendChild(td2);
-      newTr.appendChild(td3);
-      newTr.appendChild(td4);
-      newTr.appendChild(td5);
-      newTr.appendChild(td6);
-      newTr.appendChild(td7);
-      newTr.appendChild(td8);
-      newTr.appendChild(td9);
-
-      //CELLS-LINK IN INPUT
-      // let btnEdit = document.querySelector('.cells-btn1');
-      let boxModal = document.querySelector('.box');
-
-      linkAppendOne.addEventListener('click', (event) => {
-         boxModal.style.display = 'flex';
-         event.preventDefault();
-      });
-
-
-
-      linkAppendTwo.addEventListener('click', (event) => {
-         event.target.closest('tr').remove();
-         event.preventDefault();
-      });
-
-      const btnRemove = document.querySelector('btn-remove');
-
-      btnRemove.add
-
    }
+
+   var makeButtonsRow = function(goods_id) {
+      return "<td class=\"cells-btn\">" +
+      "<a href=\"/employee/delete?goods_id=" + goods_id + "\" class=\"cells-btn1\">编辑</a>" +
+      "<a href=\"\" class=\"cells-btn2\">册除</a>" +
+      "</td>";
+   }
+
+	for ( var i = 0; i < data.length; i += 1) {
+		$("#goods_table tbody").append("<tr class=\"body-rows\">" +
+         wrapColumn(data[i].id) +
+         wrapColumn(data[i].goods_id) +
+         wrapColumn(data[i].name) +
+         wrapColumn(data[i].category) +
+         wrapColumn(data[i].buy_price) +
+         wrapColumn(data[i].sell_price) +
+         makeStatusRow(data[i].status) +
+         wrapColumn(data[i].update_date) +
+         makeButtonsRow(data[i].goods_id) +
+         "</tr>")
+	}
 }
 
+async function getGoods() {
+   fetch('/employee/get', {
+      method: 'GET'
+   }).then(res => {
+      makeTable(res.json());
+   }).catch(() => {
+      alert("Could not get goods");
+   })
+}
 
-
+document.addEventListener("DOMContentLoaded", getGoods);

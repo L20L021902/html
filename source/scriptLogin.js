@@ -12,10 +12,9 @@ async function postRequest(url, info = {
       body: JSON.stringify(info),
    }).then(() => {
       window.location.href = "/infocient/indexclient.html";
-   })
-      .catch(() => {
-         alert('Неверное имя пользователя или пароль');
-      });
+   }).catch(() => {
+      alert('Wrong username or password');
+   });
 
 }
 
