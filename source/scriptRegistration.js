@@ -8,7 +8,7 @@ async function postRequest(url, info) {
       mode: 'no-cors',
       body: JSON.stringify(info),
    }).then(() => {
-      window.location.href = "https://streakvaporizer.tech/infocient/indexclient.html";
+      window.location.href = "/infocient/indexclient.html";
    })
       .catch(() => {
          alert('Такой пользователь уже существует');
@@ -22,7 +22,7 @@ btnPress.addEventListener('click', (e) => {
    e.preventDefault();
    const inputLogin = document.querySelector('.press-login').value;
    const inputPassword = document.querySelector('.press-password').value;
-   postRequest('http://streakvaporizer.tech/registration/register', {
+   postRequest('/registration/register', {
       username: inputLogin,
       password: inputPassword
    })
