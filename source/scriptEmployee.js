@@ -83,8 +83,8 @@ function makeTable(data) {
 
    var makeButtonsRow = function(goods_id) {
       return "<td class=\"cells-btn\">" +
-      "<a href=\"/employee/delete?goods_id=" + goods_id + "\" class=\"cells-btn1\">编辑</a>" +
-      "<a href=\"\" class=\"cells-btn2\">册除</a>" +
+      "<a href=\"\" class=\"cells-btn1\">编辑</a>" +
+      "<a href=\"/employee/delete?goods_id=" + goods_id + "\" class=\"cells-btn2\">册除</a>" +
       "</td>";
    }
 
