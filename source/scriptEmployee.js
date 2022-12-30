@@ -90,6 +90,7 @@ function makeTable(data) {
    }
 
 	for ( var i = 0; i < data.length; i += 1) {
+      console.log(i);
 		rows.append("<tr class=\"body-rows\">" +
          wrapColumn(data[i].id) +
          wrapColumn(data[i].goods_id) +
@@ -102,6 +103,8 @@ function makeTable(data) {
          makeButtonsRow(data[i].goods_id) +
          "</tr>")
 	}
+
+   console.log("end");
 }
 
 async function getGoods() {
