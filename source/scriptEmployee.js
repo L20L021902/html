@@ -111,6 +111,8 @@ async function getGoods() {
    fetch('/employee/get', {
       method: 'GET'
    }).then(res => {
+      console.log(data);
+      console.log(data.json());
       makeTable(res.json());
    }).catch(() => {
       alert("Could not get goods");
