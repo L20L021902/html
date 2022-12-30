@@ -19,7 +19,7 @@ async function postRequest(url, info = {
 
 }
 
-const btnPress = document.querySelector('.btn-button-login');
+const btnPress = document.querySelector('#btn-button-login');
 
 btnPress.addEventListener('click', () => {
    const inputLogin = document.querySelector('.press-login').value;
@@ -30,7 +30,7 @@ btnPress.addEventListener('click', () => {
    })
 })
 
-const btnRegistration = document.querySelector('.btn-button-registration');
+const btnRegistration = document.querySelector('#btn-button-registration');
 
 btnRegistration.addEventListener('click', () => {
   window.location.href = "/registration"
