@@ -108,7 +108,7 @@ function makeTable(data) {
 }
 
 async function getGoods() {
-   fetch('/employee/get', {
+   await fetch('/employee/get', {
       method: 'GET'
    }).then(res => {
       console.log(res);
