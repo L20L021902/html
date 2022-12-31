@@ -83,3 +83,36 @@ async function getClients() {
 }
 
 document.addEventListener("DOMContentLoaded", getClients);
+
+let buttonForm = findByClass('.addBtn');
+
+async function postRequest(url, info) {
+  return await fetch(`${url}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8'
+    },
+    body: JSON.stringify(info),
+  }).then(() => {
+	window.location.reload();
+  }).catch(() => {
+	alert("Couldn't add user")
+  });
+}
+
+buttonForm.addEventListener('click', (e) => {
+	e.preventDefault();
+   let client_id = Number(document.querySelector('#input-client_id').value);
+   let name = document.querySelector('#input-name').value;
+   let sex = document.querySelector('#input-sex').value;
+   let phone = Number(document.querySelector('#input-phone').value);
+   let address = document.querySelector('#input-address').value;
+
+  postRequest('/governmentClient/add', {
+    client_id: client_id,
+    name: name,
+    address: address,
+    phone: phone,
+    sex: sex
+  })
+})
