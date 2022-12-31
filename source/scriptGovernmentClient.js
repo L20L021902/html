@@ -51,7 +51,7 @@ function makeTable(data) {
    var makeButtonsRow = function(client_id) {
       return "<td class=\"cells-btn\">" +
       "<a href=\"\" class=\"cells-btn1\">编辑</a>" +
-      "<a href=\"/governmentClients/delete?client_id=" + client_id + "\" class=\"cells-btn2\">册除</a>" +
+      "<a href=\"/governmentClient/delete?client_id=" + client_id + "\" class=\"cells-btn2\">册除</a>" +
       "</td>";
    }
 
@@ -71,7 +71,7 @@ function makeTable(data) {
 }
 
 async function getClients() {
-   await fetch('/governmentClients/get', {
+   await fetch('/governmentClient/get', {
       method: 'GET'
    })
    .then(res => res.json())
