@@ -100,7 +100,7 @@ function makeTable(data) {
          wrapColumn(data[i].goods_id) +
          wrapColumn(data[i].name) +
          wrapColumn(data[i].category) +
-         wrapColumn(data[i].sell_price) +
+         wrapColumn(data[i].buy_price) +
          wrapColumn(data[i].stock) +
          makeStatusRow(data[i].status) +
          wrapColumn(data[i].update_date) +
