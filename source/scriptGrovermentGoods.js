@@ -74,3 +74,48 @@ function clearHighlight() {
       }
    })
 }
+
+function makeTable(data) {
+
+   const rows = document.querySelector('#sales_table_rows');
+
+	var wrapColumn = function(value) {
+		return "<td>" + value + "</td>";
+	};
+
+   var makeButtonsRow = function(sales_id) {
+      return "<td class=\"cells-btn\">" +
+      "<a href=\"\" class=\"cells-btn4\">编辑</a>" +
+      "<a href=\"/governmentGoods/delete?sales_id=" + sales_id + "\" class=\"cells-btn5\">册除</a>" +
+      "</td>";
+   }
+
+   var rows_html = ""
+	for ( var i = 0; i < data.length; i += 1) {
+		rows_html += "<tr class=\"body-rows\">" +
+         wrapColumn(data[i].id) +
+         wrapColumn(data[i].order_id) +
+         wrapColumn(data[i].client_id) +
+         wrapColumn(data[i].amount) +
+         wrapColumn(data[i].status) +
+         wrapColumn(data[i].update_date) +
+         makeButtonsRow(data[i].goods_id) +
+         "</tr>";
+	}
+
+   rows.innerHTML = rows_html;
+}
+
+async function getSales() {
+   await fetch('/governmentGoods/get', {
+      method: 'GET'
+   })
+   .then(res => res.json())
+   .then(data => makeTable(data))
+   .catch(e => {
+      console.log(e);
+      alert("Could not get sales");
+   })
+}
+
+document.addEventListener("DOMContentLoaded", getSales);
