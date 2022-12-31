@@ -70,7 +70,7 @@ function clearHighlight() {
 
 function makeTable(data) {
 
-   const rows = document.querySelector('#goods_table_rows');
+   const rows = document.querySelector('#stocks_table_rows');
 
 	var wrapColumn = function(value) {
 		return "<td>" + value + "</td>";
