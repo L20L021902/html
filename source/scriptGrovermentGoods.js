@@ -83,10 +83,10 @@ function makeTable(data) {
 		return "<td>" + value + "</td>";
 	};
 
-   var makeButtonsRow = function(sales_id) {
+   var makeButtonsRow = function(order_id) {
       return "<td class=\"cells-btn\">" +
       "<a href=\"\" class=\"cells-btn4\">编辑</a>" +
-      "<a href=\"/governmentGoods/delete?sales_id=" + sales_id + "\" class=\"cells-btn5\">册除</a>" +
+      "<a href=\"/governmentGoods/delete?order_id=" + order_id + "\" class=\"cells-btn5\">册除</a>" +
       "</td>";
    }
 
@@ -99,7 +99,7 @@ function makeTable(data) {
          wrapColumn(data[i].amount) +
          wrapColumn(data[i].status) +
          wrapColumn(data[i].update_date) +
-         makeButtonsRow(data[i].goods_id) +
+         makeButtonsRow(data[i].order_id) +
          "</tr>";
 	}
 

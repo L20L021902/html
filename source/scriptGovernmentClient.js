@@ -39,3 +39,47 @@ function clearHighlight() {
       }
    })
 }
+
+function makeTable(data) {
+
+   const rows = document.querySelector('#clients_table_rows');
+
+	var wrapColumn = function(value) {
+		return "<td>" + value + "</td>";
+	};
+
+   var makeButtonsRow = function(client_id) {
+      return "<td class=\"cells-btn\">" +
+      "<a href=\"\" class=\"cells-btn1\">编辑</a>" +
+      "<a href=\"/governmentClients/delete?client_id=" + client_id + "\" class=\"cells-btn2\">册除</a>" +
+      "</td>";
+   }
+
+   var rows_html = ""
+	for ( var i = 0; i < data.length; i += 1) {
+		rows_html += "<tr class=\"body-rows\">" +
+         wrapColumn(data[i].client_id) +
+         wrapColumn(data[i].name) +
+         wrapColumn(data[i].sex) +
+         wrapColumn(data[i].phone) +
+         wrapColumn(data[i].address) +
+         makeButtonsRow(data[i].client_id) +
+         "</tr>";
+	}
+
+   rows.innerHTML = rows_html;
+}
+
+async function getClients() {
+   await fetch('/governmentClients/get', {
+      method: 'GET'
+   })
+   .then(res => res.json())
+   .then(data => makeTable(data))
+   .catch(e => {
+      console.log(e);
+      alert("Could not get clients");
+   })
+}
+
+document.addEventListener("DOMContentLoaded", getClients);
