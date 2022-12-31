@@ -67,3 +67,60 @@ function clearHighlight() {
       }
    })
 }
+
+function makeTable(data) {
+
+   const rows = document.querySelector('#goods_table_rows');
+
+	var wrapColumn = function(value) {
+		return "<td>" + value + "</td>";
+	};
+
+   var makeStatusRow = function(status) {
+      if (status == "却贷") {
+         return "<td class=\"cells-status1\">却贷</td>";
+      } else {
+         return "<td class=\"cells-status2\">有货</td>";
+      }
+   }
+
+   var makeButtonsRow = function() {
+      return "<td>" +
+      "<div class=\"cells-btn\">" +
+         "<a href=\"\" class=\"cells-btn1\">库存盘点</a>" +
+         "<a href=\"\" class=\"cells-btn2\">销售出库</a>" +
+      "</div>" +
+   "</td>";
+   }
+
+   var rows_html = ""
+	for ( var i = 0; i < data.length; i += 1) {
+		rows_html += "<tr class=\"body-rows\">" +
+         wrapColumn(data[i].id) +
+         wrapColumn(data[i].goods_id) +
+         wrapColumn(data[i].name) +
+         wrapColumn(data[i].category) +
+         wrapColumn(data[i].sell_price) +
+         wrapColumn(data[i].stock) +
+         makeStatusRow(data[i].status) +
+         wrapColumn(data[i].update_date) +
+         makeButtonsRow() +
+         "</tr>";
+	}
+
+   rows.innerHTML = rows_html;
+}
+
+async function getGoods() {
+   await fetch('/stocks/get', {
+      method: 'GET'
+   })
+   .then(res => res.json())
+   .then(data => makeTable(data))
+   .catch(e => {
+      console.log(e);
+      alert("Could not get stocks");
+   })
+}
+
+document.addEventListener("DOMContentLoaded", getGoods);
