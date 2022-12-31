@@ -84,7 +84,7 @@ async function getClients() {
 
 document.addEventListener("DOMContentLoaded", getClients);
 
-let buttonForm = findByClass('.addBtn');
+let buttonForm = document.querySelector('.addBtn');
 
 async function postRequest(url, info) {
   return await fetch(`${url}`, {
